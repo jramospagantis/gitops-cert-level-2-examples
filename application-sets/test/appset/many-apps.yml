@@ -13,6 +13,7 @@ spec:
   template:      
     metadata:
       name: '{{appName}}-{{cluster.name}}'
+    annotations:
       argocd.argoproj.io/sync-wave: "'{{priority}}'"
     spec:
       # The project the application belongs to.
