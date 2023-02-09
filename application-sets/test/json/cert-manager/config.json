@@ -1,0 +1,13 @@
+{
+    "repoUrl": "https://github.com/<your user>/gitops-cert-level-2-examples",
+    "branch": "HEAD",
+    "environment": "beta",
+    "region": "apse2",
+    "appName": "cert-manager",
+    "cluster": {
+        "url": "https://kubernetes.default.svc",
+        "name": "in-cluster"
+    },
+    "appPath": "application-sets/test/apps/cert-manager",
+    "priority": "10"
+}

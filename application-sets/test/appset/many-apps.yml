@@ -8,25 +8,25 @@ spec:
   - git:
       repoURL: https://github.com/jramospagantis/gitops-cert-level-2-examples.git
       revision: HEAD
-      directories:
-      - path: application-sets/test/apps/*
+      files:
+      - path: "application-sets/test/json/**/config.json"
   template:      
     metadata:
-      name: '{{path.basename}}'
+      name: '{{appName}}-{{cluster.name}}'
+      argocd.argoproj.io/sync-wave: "'{{priority}}'"
     spec:
       # The project the application belongs to.
       project: default
 
       # Source of the application manifests
       source:
-        repoURL: https://github.com/jramospagantis/gitops-cert-level-2-examples.git
+        repoURL: '{{repoUrl}}'
         targetRevision: HEAD
-        path: '{{path}}'
+        path: '{{appPath}}'
       
       # Destination cluster and namespace to deploy the application
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basename}}'
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
