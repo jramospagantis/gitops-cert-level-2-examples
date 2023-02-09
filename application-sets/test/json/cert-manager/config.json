@@ -1,5 +1,5 @@
 {
-    "repoUrl": "https://github.com/<your user>/gitops-cert-level-2-examples",
+    "repoUrl": "https://github.com/jramospagantis/gitops-cert-level-2-examples",
     "branch": "HEAD",
     "environment": "beta",
     "region": "apse2",
