@@ -3,8 +3,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: simple-deployment
-  annotations:
-    argocd.argoproj.io/sync-wave: "200"
 spec:
   replicas: 1
   selector:
